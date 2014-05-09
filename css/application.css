@@ -85,7 +85,7 @@ section {
 .location,
 .hours {
     /* TODO give these two divs some padding so that they line up with the map */
-    padding-top: 7em;
+    padding-top: 6em;
 }
 
 .hours-label { /* TODO style these with the appropriate font styles (bold/italic) */  font-weight: bold;}
@@ -99,42 +99,70 @@ section {
 
 .menu {
     /* TODO give this section a color of #221c12 and a background of #fffdf0. give it some bottom padding so there's space below the text. */
+    color:#221c12 ;
+    background-color:#fffdf0;
+    padding-bottom: 4em; 
 }
 
 .menu h2 {
     /* TODO make this font size larger than the Foundation default */
+    font-size: 3em;
+    text-align: center;
 }
 
 .menu h2, .menu h3, .menu h4 {
     /* TODO give these headers a color of #221c12 */
-}
+    color: #221c12 ;
 
+}
 
 /* TODO center the text of the h2 and menu-section */
 
 .menu-section h3 a {
+    text-align: center;
+    color:  rgba(34, 28, 18, .75);
+    padding-bottom:.3em;
+
     /* TODO make menu section links a semi-transparent color rgba(34, 28, 18, .75). give them a 3px bottom border and give it a bit of space */
     /* TODO give the menu section links a CSS transition so that when you hover them, the color fades in slowly */
 }
+.menu-section h3 a:hover {
+    border-bottom: solid 3px;
+    border-color: rgba(34, 28, 18, 1);
+    color: rgba(34, 28, 18, 1) ;
 
+}
 
+.active {
+    border-bottom: solid 3px;
+    border-color: rgba(34, 28, 18, 1);
+    color: rgba(34, 28, 18, 1) ;
+
+}
 /* TODO on the menu section links, when hovered, make them the same color but 100% opacity instead of 75% (.75) and make the bottom border the same color. */
 
 /* TODO on the ACTIVE menu section links, make them look the same as hovered ones. How do you know if they are active? */
 
 .menu-section-content {
+    padding-top:2em;
     /* TODO give this some space below the menu links */
 }
 
 
 .menu-item {
+    margin-bottom:1em;
     /* TODO give each menu item some bottom margin */
 }
 
 /* TODO style the menu-item-name to be bold */
+.menu-item-name {
+    font-weight: 900;
+}
 
 /* TODO style the menu-item-description to be italic and be in one line with the price. You don't need to use Foundation classes to do this, but if you want to try and see, go for it! */
-
+.menu-item-description {
+    font-style: italic;
+}
 /* TODO style the menu-item-price to be bold, 50% opacity, in line with the description but have some space to the left of it. */
 
 
@@ -143,6 +171,14 @@ section {
 /* ---------------------------------------------- */
 
 .contact {
+    background: url('../images/symbols-bottom.png') no-repeat;
+    background-position-y:top;
+    background-color: #221c12;
+    padding-top: 35em;
+    padding-bottom:8em;
+    
+
+
     /* TODO add the dark brown background color, and the background image symbols-bottom. Change the background-position so that the bottom of it shows (where the symbols start to fade out). */
     /* TODO add some top and bottom padding so that the content doesn't overlap the background image. Note how the padding changes the location of the background image. */
 }

@@ -66,7 +66,7 @@
                 <!-- TODO for each of these 3 divs, add foundation columns so that they sit side by side at large screen sizes, and stack on top of each other at a small screen size -->
                 <div class="location">
                     <!-- TODO link to the hotel website and make the telephone a tel: link, and style this content -->
-                    at the <a href="#">Radisson Hotel</a><br /> 111 east cesar chavez <br />austin, texas 78701<br /> <a tel:>512.478.2291</a>
+                    at the <a href="#">Radisson Hotel</a> <p>&nbsp;</p>111 east cesar chavez <br />austin, texas 78701<br /> <a tel:>512.478.2291</a>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@
         <div class="row">
             <!-- TODO later we will write JavaScript to toggle the menu sections, using this link -->
             <div class="small-2 columns menu-section">
-                <h3><a href="#">Breakfast</a></h3>
+                <h3><a href="#" class="active">Breakfast</a></h3>
             </div>
             
             <div class="small-2 columns menu-section">
@@ -254,20 +254,24 @@
         <div class="row">
             
 
-        <!-- TODO add a foundation row wrapping this content. do you know why you would add it here as a div, instead of as a class on the section.address? -->
-
         <!-- TODO for each of these 3 divs, add foundation columns so that they sit side by side. make them stack at small screen sizes. -->
         <div class="large-4 medium-4 columns">  
         <div class="email">
             <h5>Email</h5>
             <!-- TODO make this an email link -->
-            info@chavez-austin.com
+            <a href:"mailto:info@chavez-austin.com">info@chavez-austin.com</a>
         </div>
         </div> 
 
         <div class="large-4 medium-4 columns">  
         <div class="social">
             <h5>Social Media</h5>
+            <div class="social-links">
+               <a href="http://facebook.com/ChavezATX"> <img src="images/facebook.png" /> </a>
+               <a href="http://twitter.com/ChavezATX"><img src="images/twitter.png" />
+               </a><a href="http://instagram.com/ChavezATX"><img src="images/instagram.png" /></a>
+               
+            </div>
             <!-- TODO write a div.social-links. -->
             <!-- TODO inside that div, write a link that links to the social media links, and use the social media images in the image folder. -->
             <!-- TODO Facebook http://facebook.com/ChavezATX -->
@@ -277,11 +281,10 @@
     </div>
 
          <div class="large-4 medium-4 columns">  
-        <div class="press columns small-4">
+       
             <h5>Press Inquiries</h5>
             <!-- TODO make this an email link -->
-            press@chavezrestaurant.com
-        </div>
+            <a href="mailto:press@chavezrestaurant.com">press@chavezrestaurant.com</a>
     </div>
 
         </div>
