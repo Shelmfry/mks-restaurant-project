@@ -48,7 +48,7 @@ header .tagline {
     padding: 1em;
     position: absolute;
     width:100%;
-    margin-top: 35%;
+    margin-top: 15%;
     z-index: 2;
 
      /* I added this transparent background bar for you. */
@@ -181,6 +181,15 @@ section {
 
     /* TODO add the dark brown background color, and the background image symbols-bottom. Change the background-position so that the bottom of it shows (where the symbols start to fade out). */
     /* TODO add some top and bottom padding so that the content doesn't overlap the background image. Note how the padding changes the location of the background image. */
+}
+
+.social-links img {
+    padding: .3em;
+    opacity: .5;
+}
+
+.social-links img:hover {
+    opacity: 1;
 }
 
 /* TODO make the .social-links links be displayed in a row with some space between them. make them 50% opacity, and fade to 100% opacity when you hover over them. */
