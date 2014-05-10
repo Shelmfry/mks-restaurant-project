@@ -37,22 +37,50 @@
             <h4>the new restaurant by shawn cirkiel</br>poolside at the radisson</h4>
         </div>
 
-        <img src="images/chavez-1.jpg" alt="">
+        
+        <img height="100%" name="slide" src="image_1.gif" width="100%" />
         <!-- TODO there are ten images in the images folder. write image tags for each of them. then wrap the images in a #slides div so that Slides JS knows how to find them -->
-        <div id="slides">
+       <!--  <div id="slides">
+            <ul>
+                  <li><img src="images/chavez-1.jpg" /></li>
+                  <li><img src="images/chavez-2.jpg" /></li>
+                  <li><img src="images/chavez-3.jpg" /></li>
+                  <li><img src="images/chavez-4.jpg" /></li>
+                  <li><img src="images/chavez-5.jpg" /></li>
+                  <li><img src="images/chavez-6.jpg" /></li>
+                  <li><img src="images/chavez-7.jpg" /></li>
+                  <li><img src="images/chavez-8.jpg" /></li>
+                  <li><img src="images/chavez-9.jpg" /></li>
+                  <li><img src="images/chavez-10.jpg" /></li>
+            </ul>
+        </div> -->
 
-            <img src="images/chavez-1.jpg" />
-            <img src="images/chavez-2.jpg" />
-            <img src="images/chavez-3.jpg" />
-            <img src="images/chavez-4.jpg" />
-            <img src="images/chavez-5.jpg" />
-            <img src="images/chavez-6.jpg" />
-            <img src="images/chavez-7.jpg" />
-            <img src="images/chavez-8.jpg" />
-            <img src="images/chavez-9.jpg" />
-            <img src="images/chavez-10.jpg" />
+        <script language="JavaScript"> 
+                var i = 0; 
+                var path = new Array(); 
 
-        </div>
+                // LIST OF IMAGES 
+                path[0] = "images/chavez-1.jpg"; 
+                path[1] = "images/chavez-2.jpg"; 
+                path[2] = "images/chavez-3.jpg";
+                path[3] = "images/chavez-4.jpg"; 
+                path[4] = "images/chavez-5.jpg"; 
+                path[5] = "images/chavez-6.jpg"; 
+                path[6] = "images/chavez-7.jpg"; 
+                path[7] = "images/chavez-8.jpg"; 
+                path[8] = "images/chavez-9.jpg";
+                path[9] = "images/chavez-10.jpg";  
+
+                function swapImage() 
+                { 
+                document.slide.src = path[i]; 
+                if(i < path.length - 1) i++; 
+                else i = 0; 
+                setTimeout("swapImage()",3000); 
+                } 
+                window.onload=swapImage; 
+        </script> 
+
 
     </header>
 
@@ -299,11 +327,13 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
     <!-- Foundation JS -->
-    <script src="/js/foundation.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/slides.js"></script>
     <script>
     $(document).foundation();
     </script>
-
+   
+    
     <!-- Slides.js -->
     <!-- TODO link to the slides.min.js file -->
     <!-- TODO write the .slidesjs() code to make the slideshow work -->
