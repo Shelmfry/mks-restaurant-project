@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="css/application.css">
 
     <!-- Slides.js CSS -->
-    <link rel="stylesheet" href="css/slides.css">
+    <link rel="stylesheet" href="css/responsiveslides.css">
+    <!-- <link rel="stylesheet" href="css/slides.css"> -->
 
 </head>
 
@@ -38,10 +39,10 @@
         </div>
 
         
-        <img height="100%" name="slide" src="image_1.gif" width="100%" />
+       <!--  <img height="100%" name="slide" src="" width="100%" /> -->
         <!-- TODO there are ten images in the images folder. write image tags for each of them. then wrap the images in a #slides div so that Slides JS knows how to find them -->
-       <!--  <div id="slides">
-            <ul>
+        <!-- <div id="slides"> -->
+            <ul class="rslides">
                   <li><img src="images/chavez-1.jpg" /></li>
                   <li><img src="images/chavez-2.jpg" /></li>
                   <li><img src="images/chavez-3.jpg" /></li>
@@ -53,33 +54,37 @@
                   <li><img src="images/chavez-9.jpg" /></li>
                   <li><img src="images/chavez-10.jpg" /></li>
             </ul>
-        </div> -->
+       <!--  </div> -->
 
-        <script language="JavaScript"> 
-                var i = 0; 
-                var path = new Array(); 
+          <!-- <script language="JavaScript"> 
 
-                // LIST OF IMAGES 
-                path[0] = "images/chavez-1.jpg"; 
-                path[1] = "images/chavez-2.jpg"; 
-                path[2] = "images/chavez-3.jpg";
-                path[3] = "images/chavez-4.jpg"; 
-                path[4] = "images/chavez-5.jpg"; 
-                path[5] = "images/chavez-6.jpg"; 
-                path[6] = "images/chavez-7.jpg"; 
-                path[7] = "images/chavez-8.jpg"; 
-                path[8] = "images/chavez-9.jpg";
-                path[9] = "images/chavez-10.jpg";  
+         //        var path = new Array(); 
+         //        // LIST OF IMAGES 
+         //        path[0] = "images/chavez-1.jpg"; 
+         //        path[1] = "images/chavez-2.jpg"; 
+         //        path[2] = "images/chavez-3.jpg";
+         //        path[3] = "images/chavez-4.jpg"; 
+         //        path[4] = "images/chavez-5.jpg"; 
+         //        path[5] = "images/chavez-6.jpg"; 
+         //        path[6] = "images/chavez-7.jpg"; 
+         //        path[7] = "images/chavez-8.jpg"; 
+         //        path[8] = "images/chavez-9.jpg";
+         //        path[9] = "images/chavez-10.jpg";  
 
-                function swapImage() 
-                { 
-                document.slide.src = path[i]; 
-                if(i < path.length - 1) i++; 
-                else i = 0; 
-                setTimeout("swapImage()",3000); 
-                } 
-                window.onload=swapImage; 
-        </script> 
+
+         //         var i = 0; 
+
+         //        function swapImage() 
+         //        { 
+         //        document.slide.src = path[i]; 
+         //        if(i < path.length - 1) i++; 
+         //        else i = 0; 
+         //        setTimeout("swapImage()",3000);
+         //        setTimeout("fadeOut()", 3000);
+                    
+         //        } 
+         //        window.onload=swapImage; 
+         // </script> 
 
 
     </header>
@@ -130,27 +135,27 @@
         <div class="row">
             <!-- TODO later we will write JavaScript to toggle the menu sections, using this link -->
             <div class="small-2 columns menu-section">
-                <h3><a href="#" class="active">Breakfast</a></h3>
+                <h3><a href="#" class="is-active menu-action" id="menu-action-breakfast">Breakfast</a></h3>
             </div>
             
             <div class="small-2 columns menu-section">
-                <h3><a href="#">Lunch</a></h3>
+                <h3><a href="#" class="is-active menu-action" id="menu-action-lunch">Lunch</a></h3>
             </div>
 
             <div class="small-2 columns menu-section">
-                <h3><a href="#">Dinner</a></h3>
+                <h3><a href="#" class="is-active menu-action" id="menu-action-dinner">Dinner</a></h3>
             </div>
 
             <div class="small-2 columns menu-section">
-                <h3><a href="#">Dessert</a></h3>
+                <h3><a href="#" class="is-active menu-action" id="menu-action-dessert">Dessert</a></h3>
             </div>
 
             <div class="small-2 columns menu-section">
-                <h3><a href="#">Cocktails</a></h3>
+                <h3><a href="#" class="is-active menu-action" id="menu-action-breakfast">Cocktails</a></h3>
             </div>
 
             <div class="small-2 columns menu-section">
-                <h3><a href="#">Wine</a></h3>
+                <h3><a href="#" class="is-active menu-action" id="menu-action-breakfast">Wine</a></h3>
             </div>
         </div>
 
@@ -328,7 +333,9 @@
 
     <!-- Foundation JS -->
     <script src="js/foundation.min.js"></script>
-    <script src="js/slides.js"></script>
+   
+    <!-- <script src="js/script.js"></script> -->
+    
     <script>
     $(document).foundation();
     </script>
@@ -337,6 +344,12 @@
     <!-- Slides.js -->
     <!-- TODO link to the slides.min.js file -->
     <!-- TODO write the .slidesjs() code to make the slideshow work -->
+<script src="js/responsiveslides.js"></script>
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides();
+  });
+</script>
 
 
 </body>
