@@ -1,23 +1,5 @@
 $(document).ready(function() {
 
-    /*
-     * Image Slider
-    */
-    $('#slides').slidesjs({
-        navigation: {
-            effect: "fade"
-        },
-        pagination: {
-            active: false
-        },
-        play: {
-            active: false,
-            auto: true,
-            interval: 7000,
-            swap: true,
-            effect: "fade"
-        }
-    });
 
     /*
      * @name Menu
@@ -40,17 +22,16 @@ $(document).ready(function() {
       
 
         var populatePieces = function(json) { 
-            var html= []; 
-            for (var i =0; i <json.length; i ++) {
- 
-            var html = '<div class=\"menu-item\"><div class=\"menu-item-name\">' + json[i].dish + '</div><p class=\"menu-item-description\">' + json[i].ingredients + '</p>
-            <div class=\"menu-item-price\">' + json[i].price + '</div></div>';
-            };
 
-        };
             // @TODO Create empty string variable
+            var html= ""; 
 
             // @TODO Iterate through array that was passed through the parameter 
+            for(var x=0;x<json.length; x++){
+                 //var html = '<div class="menu-item"><div class="menu-item-name">' + json[x].dish + '</div><p class="menu-item-description">' + json[x].ingredients + '</p> <div class="menu-item-price">' + json[x].price + '</div></div>';
+                 html = html + '<div class="menu-item">';
+                 html = html + '<div class="menu-item-name">' + json[x].dish + '</div>' + '<p class="menu-item-description">' + json[x].ingredients + '</p> <div class="menu-item-price">' + json[x].price + '</div>';
+                 html = html + '</div>';
                 
                 /*
                  * @TODO Create HTML string based on the original HTML. Final sting should look like this:
@@ -60,6 +41,12 @@ $(document).ready(function() {
                  *            <div class="menu-item-price">3</div>
                  *       </div>
                 */
+            }
+            // @TODO Return the created string
+         return html; 
+
+        };
+
 
                 /*
                  * @TODO Extension: Notice how on wine, there are undefined ingredients
@@ -70,8 +57,6 @@ $(document).ready(function() {
                 */
 
 
-            // @TODO Return the created string
-         return(html); 
 
           
 
@@ -82,7 +67,12 @@ $(document).ready(function() {
 
         var populateSections = function(json) {
 
+            // var test = "bananas";
+            // console.log(test);
+            // return test;
+
             // @TODO Create empty string variable
+            var html = "";
 
             /*
              * @TODO Create HTML string based on the original HTML. 
@@ -99,8 +89,20 @@ $(document).ready(function() {
             */
 
             // @TODO Iterate through array that was passed through the parameter and create the HTML string -- using a for loop
+            for(var x=0; x<json.length; x++){
+                html = html + '<div class="menu-group columns small-12 medium-4"> <h4>' + json[x].section + '</h4>';
+                html = html + populatePieces(json[x].content);
+                html = html + '</div>';
+                // html = json[x].section;
+
+                // somewhere here we need to get all the menuitems by calling populatePieces();
+                //</div>'; 
+            }
+            // html = html + "bananas";
+            // console.log(html);
 
             // @TODO Use a jQuery function to insert the HTML string into the menu section content area
+            $("#menu-section-content").html(html);
 
         };
 
@@ -127,45 +129,33 @@ $(document).ready(function() {
 
         };
 
+
         /*
          * @name Event Handler
          * @description This event handler will pick up event information from the menu actions. Use this to pass the course to getMenu.
         */
 
 
-     var getId = $('.menu-action').on('click' , function (e) {
-           
-           console.log($(this).attr('id'));
-            id = id.substring(12,id.length);
-
-        }); 
-
-
-
-
-
         // @TODO Create an event handler to get event information for menu actions
-
+         var getId = $('.menu-action').on('click' , function (e) {
+           
             // @TODO Get the id attribute from what was clicked.
-
+            var id = $(this).attr('id');
             // @TODO Console.log id. Notice how the end of the ID has 'breakfast','lunch', etc. 
-
             // This action will save the ending of the id to back into id, so now id only equals 'breakfast','lunch',etc
-         id = id.substring(12,id.length);
-
-         var getMenu = function (e) {
-            
-            
-            $('.menu-action').removeClass('is-active');
-
-
-            $('.menu-action').addClass('is-active');
-         });
+            id = id.substring(12,id.length);
+            // console.log(id);
             // @TODO Pass the id into getMenu() to begin the process of getting the JSON and populating the data
+            getMenu(id);
+            // console.log(id);
 
             // @TODO Remove the class 'is-active' from all menu actions
 
             // @TODO Add 'is-active' to this specific action that was clicked. 'is-active provides the visual cue for what's active via CSS
+
+
+        }); 
+
 
 
     /*

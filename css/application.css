@@ -138,9 +138,7 @@ header .tagline {
     margin-left: .7em;
 }
 
-.menu-section {
-    padding-bottom:1em;
-}
+
 
 @media all and (max-width:918px) {
     .menu-section h3 {
@@ -151,6 +149,9 @@ header .tagline {
     .menu-section h3 {
         font-size: .7em;
     }
+}
+.menu-section {
+    padding-bottom:1em;
 }
 .menu-section h3 a {
     text-align: center;
