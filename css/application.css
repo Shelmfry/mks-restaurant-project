@@ -123,22 +123,32 @@ header .tagline {
     color: #221c12;
 }
 /* TODO center the text of the h2 and menu-section */
+
+.menu-group {
+   /* float:left;*/
+    display: table;
+
+}
+
  .menu-item-name {
-    float:left;
-    clear:both;
+    display:block;
     font-weight: 900;
+    width:100%;
+
 }
+
 .menu-item-description {
-    float: left;
-    clear:left;
+    display:inline;
     font-style: italic;
+    border:solid;
+
+
 }
+ 
 .menu-item-price {
-    float:left;
-    margin-left: .7em;
+    display:inline-block;
+    margin-left: .5em;
 }
-
-
 
 @media all and (max-width:918px) {
     .menu-section h3 {
